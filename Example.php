@@ -20,7 +20,7 @@ $accounts = $client->accounts()->all();
 $account = array_pop($accounts);
 $account_id = $account->account_id;
 
-// Get a single account using its account_id
+// It's also possible to get a single account using its account_id
 $account = $client->accounts()->get($account_id);
 // Print out the information returned for the account
 echo print_r($account, true)."\n";
@@ -28,5 +28,30 @@ echo print_r($account, true)."\n";
 // Get a list of users on the account. For a fresh install, this will be only
 // the user who registered the API key
 $users = $client->accounts()->users($account_id)->all();
-// Print out the information returned for the users
-echo print_r($users, true)."\n";
+
+// Get the user_id of the first user returned
+$user = array_pop($users);
+$user_id = $user->user_id;
+
+// It's also possible to get a single user using its account_id and user_id
+$user = $client->accounts()->users($account_id)->get($user_id);
+// Print out the information returned for the account
+echo print_r($user, true)."\n";
+
+
+exit;
+// From here on out, we are no longer just pulling existing information from
+// the system, we're making changes. Proceed with cuation!
+
+// Create a new order. Normally, the buyer and seller would be different users,
+// from different accounts, but for the sake of simplicity here, our user is
+// going to sell something to themselves.
+$orderData = array(
+	'order_type'  => 1, // A standard escrow order for goods (see http://www.armorpayments.com/api/classes/ArmorPayments.Api.Entity.Order.html)
+	'seller_id'   => $user_id,
+	'buyer_id'    => $user_id,
+	'amount'      => 1000,
+	'summary'     => 'Test order',
+	'description' => 'A test order from the armor-payments-php example script',
+	);
+$order = $client->accounts()->orders($account_id)->create($orderData);

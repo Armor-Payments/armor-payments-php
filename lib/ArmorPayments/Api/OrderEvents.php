@@ -1,4 +1,4 @@
 <?php
 namespace ArmorPayments\Api;
 
-class Documents extends \ArmorPayments\Api\Resource {}
+class OrderEvents extends \ArmorPayments\Api\Resource {}
