@@ -1,0 +1,23 @@
+{
+	"name": "armorpayments/armorpayments-php",
+	"description": "A PHP client library for interacting with the Armor Payments API",
+	"keywords": [
+		"Armor Payments",
+		"escrow payments",
+		"api"
+	],
+	"version": "1.0.0",
+	"homepage": "http://www.armorpayments.com",
+	"license": "MIT",
+	"require": {
+		"php": ">=5.4",
+		"lib-curl": "*"
+	},
+	"autoload": {
+		"files": ["lib/ArmorPayments.php"],
+		"psr-4": {
+			"ArmorPayments\\": "lib/ArmorPayments",
+			"": ["lib/", "lib/ArmorPayments/"]
+		}
+	}
+}
