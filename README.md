@@ -82,34 +82,34 @@ $client->accounts()->get($account_id);
 
 // From accounts, we chain users, orders, bank accounts
 
-$client->accounts()->users($account_id).all();
-$client->accounts()->users($account_id).get($user_id);
+$client->accounts()->users($account_id)->all();
+$client->accounts()->users($account_id)->get($user_id);
 
-$client->accounts()->orders($account_id).all();
-$client->accounts()->orders($account_id).get($order_id);
+$client->accounts()->orders($account_id)->all();
+$client->accounts()->orders($account_id)->get($order_id);
 
-$client->accounts()->bankaccounts($account_id).all();
-$client->accounts()->bankaccounts($account_id).get($bank_account_id);
+$client->accounts()->bankaccounts($account_id)->all();
+$client->accounts()->bankaccounts($account_id)->get($bank_account_id);
 
 // From orders, many things chain: documents, notes, disputes, shipments,
 // payment instructions, order events
 
-$client->accounts()->orders($account_id)->documents($order_id).all();
-$client->accounts()->orders($account_id)->documents($order_id).get($document_id);
+$client->accounts()->orders($account_id)->documents($order_id)->all();
+$client->accounts()->orders($account_id)->documents($order_id)->get($document_id);
 
-$client->accounts()->orders($account_id)->notes($order_id).all();
-$client->accounts()->orders($account_id)->notes($order_id).get($note_id);
+$client->accounts()->orders($account_id)->notes($order_id)->all();
+$client->accounts()->orders($account_id)->notes($order_id)->get($note_id);
 
-$client->accounts()->orders($account_id)->disputes($order_id).all();
-$client->accounts()->orders($account_id)->disputes($order_id).get($dispute_id);
+$client->accounts()->orders($account_id)->disputes($order_id)->all();
+$client->accounts()->orders($account_id)->disputes($order_id)->get($dispute_id);
 
-$client->accounts()->orders($account_id)->shipments($order_id).all();
-$client->accounts()->orders($account_id)->shipments($order_id).get($shipment_id);
+$client->accounts()->orders($account_id)->shipments($order_id)->all();
+$client->accounts()->orders($account_id)->shipments($order_id)->get($shipment_id);
 
-$client->accounts()->orders($account_id)->paymentinstructions($order_id).all();
+$client->accounts()->orders($account_id)->paymentinstructions($order_id)->all();
 
-$client->accounts()->orders($account_id)->orderevents($order_id).all();
-$client->accounts()->orders($account_id)->orderevents($order_id).get($event_id);
+$client->accounts()->orders($account_id)->orderevents($order_id)->all();
+$client->accounts()->orders($account_id)->orderevents($order_id)->get($event_id);
 
 // From disputes, further things chain: documents, notes, offers
 
