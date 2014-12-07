@@ -35,6 +35,10 @@ class Authenticator {
 
 	protected function request_signature($method, $uri, $timestamp) {
 		$method = strtoupper($method);
+		// Trim any URI params off of the URI to sign
+		$uriParts = explode('?', $uri);
+		$uri = $uriParts[0];
+		// Generate the signature
 		return hash('sha512', "{$this->api_secret}:{$method}:{$uri}:{$timestamp}");
 	}
 }
