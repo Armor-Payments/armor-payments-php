@@ -72,13 +72,16 @@ The Armor Payments API is REST-ish and nested, so the client relies on chaining.
 ```php
 require_once 'path_to_library_install/lib/ArmorPayments/ArmorPayments.php'
 
-$client = new \ArmorPayments\Api('your-key', 'your-secret', $should_use_sandbox)
+$client = new \ArmorPayments\Api('your-key', 'your-secret', $should_use_sandbox);
 
-// There is one top-level resource: accounts
+// There are two top-level resources: accounts and shipmentcarriers
 // Querying users and orders requires an account_id
 
 $client->accounts()->all();
 $client->accounts()->get($account_id);
+
+$client->shipmentcarriers()->all();
+$client->shipmentcarriers()->get($carrier_id);
 
 // From accounts, we chain users, orders, bank accounts
 

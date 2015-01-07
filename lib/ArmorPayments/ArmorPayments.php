@@ -21,5 +21,6 @@ require_once __DIR__.'/Api/Offers.php';
 require_once __DIR__.'/Api/OrderEvents.php';
 require_once __DIR__.'/Api/Orders.php';
 require_once __DIR__.'/Api/PaymentInstructions.php';
+require_once __DIR__.'/Api/ShipmentCarriers.php';
 require_once __DIR__.'/Api/Shipments.php';
 require_once __DIR__.'/Api/Users.php';
