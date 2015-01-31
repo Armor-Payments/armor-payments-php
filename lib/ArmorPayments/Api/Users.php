@@ -11,4 +11,11 @@ class Users extends \ArmorPayments\Api\Resource {
 	public function update($user_id, $data) {
 		return $this->request('POST', $this->uri($user_id), $data);
 	}
+
+	public function authentications($user_id) {
+		return new \ArmorPayments\Api\Authentications(
+			$this->host,
+			$this->authenticator,
+			$this->uri($user_id));
+	}
 }
