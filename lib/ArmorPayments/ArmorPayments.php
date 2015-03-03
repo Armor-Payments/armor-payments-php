@@ -13,6 +13,7 @@ require_once __DIR__.'/Authenticator.php';
 // API Resources
 require_once __DIR__.'/Api/Resource.php';
 require_once __DIR__.'/Api/Accounts.php';
+require_once __DIR__.'/Api/Authentications.php';
 require_once __DIR__.'/Api/BankAccounts.php';
 require_once __DIR__.'/Api/Disputes.php';
 require_once __DIR__.'/Api/Documents.php';
