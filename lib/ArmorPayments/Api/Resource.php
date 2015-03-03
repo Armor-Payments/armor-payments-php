@@ -64,7 +64,7 @@ abstract class Resource {
 	/////////////////////////////////////////////////////////////////////
 
 	protected function connection($uri, $method, $params) {
-		$ch = curl_init("{$this->host}/{$uri}");
+		$ch = curl_init("{$this->host}{$uri}");
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 		curl_setopt($ch, CURLOPT_FRESH_CONNECT,  true);
@@ -95,11 +95,15 @@ abstract class Resource {
 	 * @param string $method The HTTP request method (GET, POST, etc)
 	 * @param array  $params An array of params
 	 * @return mixed An array or object, decoded from the API JSON response
+	 * @throws Exception if cURL fails
 	 */
 	protected function request($method, $url, $params=array()) {
 		$this->last_headers = array();
 		$ch = $this->connection($url, $method, $params);
 		$response = curl_exec($ch);
+		if ($response === false) {
+			throw new Exception("cURL error: ".curl_error($ch));
+		}
 		if (!empty($this->last_headers['Content-Type']) && (stripos($this->last_headers['Content-Type'], 'json') !== false)) {
 			$response = json_decode($response);
 		}
