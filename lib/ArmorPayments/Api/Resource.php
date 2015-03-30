@@ -111,7 +111,14 @@ abstract class Resource {
 		return $response;
 	}
 
+	/**
+	 * Get the name of this resource (likely) for use in a URI)
+	 * @return string
+	 */
 	protected function resource_name() {
-		return strtolower(array_pop(explode('\\', get_class($this))));
+		$className = get_class($this);
+		$nameParts = explode('\\', $className);
+		$firstPart = array_pop($nameParts);
+		return strtolower($firstPart);
 	}
 }
