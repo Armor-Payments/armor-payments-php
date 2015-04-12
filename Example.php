@@ -40,18 +40,10 @@ echo print_r($user, true)."\n";
 
 
 exit;
-// From here on out, we are no longer just pulling existing information from
-// the system, we're making changes. Proceed with cuation!
-
-// Create a new order. Normally, the buyer and seller would be different users,
-// from different accounts, but for the sake of simplicity here, our user is
-// going to sell something to themselves.
-$orderData = array(
-	'order_type'  => 1, // A standard escrow order for goods (see http://www.armorpayments.com/api/classes/ArmorPayments.Api.Entity.Order.html)
-	'seller_id'   => $user_id,
-	'buyer_id'    => $user_id,
-	'amount'      => 1000,
-	'summary'     => 'Test order',
-	'description' => 'A test order from the armor-payments-php example script',
-	);
-$order = $client->accounts()->orders($account_id)->create($orderData);
+// This example file demonstrates calls against several API resources and
+// will allow you to determine that your api_key and api_secret values are
+// correct. The calls in this example have been carefully selected to ensure
+// that they are safe and repeatable.
+//
+// Once you have this working, check the /examples directory for an example
+// for the specific order type you intend to use.
