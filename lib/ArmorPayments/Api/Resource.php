@@ -84,6 +84,7 @@ abstract class Resource {
 		if (!empty($params)) {
 			$params = is_array($params) ? $params : (array)$params;
 			$params = http_build_query($params, '', '&');
+			$params = urldecode($params);
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
 		}
 

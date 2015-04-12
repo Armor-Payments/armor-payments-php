@@ -31,6 +31,13 @@ class Orders extends \ArmorPayments\Api\Resource {
 			$this->uri($order_id));
 	}
 
+	public function milestones($order_id) {
+		return new \ArmorPayments\Api\Milestones(
+			$this->host,
+			$this->authenticator,
+			$this->uri($order_id));
+	}
+
 	public function orderevents($order_id) {
 		return new \ArmorPayments\Api\OrderEvents(
 			$this->host,
