@@ -169,6 +169,10 @@ $response = $client->accounts()->orders($order->account_id)->shipments($order->o
 		));
 echo print_r($response, true)."\n";
 
+// Check the status of the various milestones on the order.
+$response = $client->accounts()->orders($order->account_id)->milestones($order->order_id)->all();
+echo print_r($response, true)."\n";
+
 // Once the buyer has received the goods and reviewed them, the last step
 // is to release the remaining payment from escrow.
 //
