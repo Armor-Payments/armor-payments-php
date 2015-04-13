@@ -10,7 +10,7 @@
 	"homepage": "http://www.armorpayments.com",
 	"license": "MIT",
 	"require": {
-		"php": ">=5.4",
+		"php": ">=5.3",
 		"lib-curl": "*"
 	},
 	"autoload": {
