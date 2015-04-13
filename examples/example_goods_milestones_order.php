@@ -77,6 +77,32 @@ $sellerUser = $client->accounts()->users($sellerAccount->account_id)->all();
 $sellerUser = $sellerUser[0];
 echo print_r($sellerUser, true)."\n";
 
+// Ask the seller to provide bank account details for the account they'd
+// like to receive payment for the order.
+$response = $client->accounts()->users($buyerAccount->account_id)->authentications($buyerUser->user_id)->create(
+	array(
+		'uri'    => "/accounts/{$sellerAccount->account_id}/bankaccounts",
+		'action' => 'create',
+		));
+echo print_r($response, true)."\n";
+
+// Usually, we'd expect the seller to provide bank details using the
+// iFrame URL generated in the previous step. In this case, we're going to
+// create a new bank account record via the API instead, so that our example
+// order doesn't have an error when funds are released because of a missing
+// bank account (this would not be a fatal error, but represents a delay in
+// completing the order until Armor Payments is instructed where funds are to
+// be transferred).
+$bankaccounts = $client->accounts()->bankaccounts($sellerAccount->account_id)->create(
+	array(
+		'type'     => 1, // A business checking account
+		'location' => 'us', // This is a domestic, US-based account
+		'bank'     => 'Example Bank',
+		'routing'  => '123456789',
+		'account'  => '1234567890123456',
+		));
+echo print_r($bankaccounts, true)."\n";
+
 // Create an order between the buyer and seller
 // We will create a goods order with milestone payments for this example
 $order = $client->accounts()->orders($sellerAccount->account_id)->create(array(
