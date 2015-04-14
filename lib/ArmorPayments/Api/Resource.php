@@ -104,7 +104,7 @@ abstract class Resource {
 		$ch = $this->connection($url, $method, $params);
 		$response = curl_exec($ch);
 		if ($response === false) {
-			throw new Exception("cURL error: ".curl_error($ch));
+			throw new \Exception("cURL error: ".curl_error($ch));
 		}
 		if (!empty($this->last_headers['Content-Type']) && (stripos($this->last_headers['Content-Type'], 'json') !== false)) {
 			$response = json_decode($response);
