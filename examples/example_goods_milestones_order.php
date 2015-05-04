@@ -185,6 +185,10 @@ $response = $client->accounts()->orders($order->account_id)->update(
 		));
 echo print_r($response, true)."\n";
 
+// Get a list of shipement carriers
+$response = $client->shipmentcarriers()->all();
+echo print_r($response, true)."\n";
+
 // Once the goods have been inspected, they need to be shipped to the buyer.
 $response = $client->accounts()->orders($order->account_id)->shipments($order->order_id)->create(
 	array(
