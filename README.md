@@ -173,6 +173,8 @@ $client->accounts()->orders($account_id)->update($order_id, $your_data);
 $client->accounts()->orders($account_id)->disputes($order_id)->offers($dispute_id)
 	->update($offer_id, $your_data);
 
+$client->accounts()->users($account_id)->create($your_data);
+
 $client->accounts()->users($account_id)->authentications($user_id)->create($your_data);
 ```
 

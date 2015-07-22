@@ -3,6 +3,15 @@ namespace ArmorPayments\Api;
 
 class Users extends \ArmorPayments\Api\Resource {
 	/**
+	 * Create a new user
+	 * @param array $data
+	 * @return Object The newly created User object
+	 */
+	public function create($data) {
+		return $this->request('POST', $this->uri(), $data);
+	}
+	
+	/**
 	 * Update an existing user
 	 * @param string $user_id
 	 * @param array  $data
