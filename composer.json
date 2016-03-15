@@ -1,12 +1,12 @@
 {
 	"name": "armorpayments/armorpayments-php",
+	"type": "library",
 	"description": "A PHP client library for interacting with the Armor Payments API",
 	"keywords": [
 		"Armor Payments",
 		"escrow payments",
 		"api"
 	],
-	"type": "library",
 	"homepage": "http://www.armorpayments.com",
 	"license": "MIT",
 	"require": {

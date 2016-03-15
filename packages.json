@@ -1,8 +1,0 @@
-{
-	"packages": {
-		"armorpayments/armorpayments-php": {
-			"dev-master": { @composer.json }
-		}
-	}
-}
-
