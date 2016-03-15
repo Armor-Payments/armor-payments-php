@@ -7,10 +7,6 @@
 		"api"
 	],
 	"type": "library",
-	"dist": {
-		"type": "git",
-		"url": "https://github.com/armor-payments/armor-payments-php.git"
-	},
 	"homepage": "http://www.armorpayments.com",
 	"license": "MIT",
 	"require": {
