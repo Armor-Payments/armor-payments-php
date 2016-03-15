@@ -9,7 +9,7 @@
 	"type": "library",
 	"dist": {
 		"type": "vcs",
-		"url": "https://github.com/ahartz1/armor-payments-php"
+		"url": "https://github.com/armor-payments/armor-payments-php"
 	},
 	"homepage": "http://www.armorpayments.com",
 	"license": "MIT",
