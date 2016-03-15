@@ -6,7 +6,11 @@
 		"escrow payments",
 		"api"
 	],
-	"version": "1.0.2",
+	"type": "library",
+	"dist": {
+		"type": "vcs",
+		"url": "https://github.com/ahartz1/armor-payments-php"
+	},
 	"homepage": "http://www.armorpayments.com",
 	"license": "MIT",
 	"require": {
@@ -14,7 +18,7 @@
 		"lib-curl": "*"
 	},
 	"autoload": {
-		"files": ["lib/ArmorPayments.php"],
+		"files": ["lib/ArmorPayments/ArmorPayments.php"],
 		"psr-4": {
 			"ArmorPayments\\": "lib/ArmorPayments",
 			"": ["lib/", "lib/ArmorPayments/"]
