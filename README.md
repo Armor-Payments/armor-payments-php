@@ -16,7 +16,7 @@ Add this to your `composer.json`:
 ```
 {
 	"require": {
-		"armor-payments/armor-payments-php": "*"
+		"armorpayments/armorpayments-php": "*"
 	}
 }
 ```
@@ -49,7 +49,7 @@ curl -s http://getcomposer.org/installer | php
 
 echo '{
 	"require": {
-		"armor-payments/armor-payments-php": "*"
+		"armorpayments/armorpayments-php": "*"
 	}
 }' > composer.json
 
