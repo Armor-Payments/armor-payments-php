@@ -11,6 +11,7 @@
 		"type": "vcs",
 		"url": "https://github.com/armor-payments/armor-payments-php"
 	},
+	"minimum-stability": "dev",
 	"homepage": "http://www.armorpayments.com",
 	"license": "MIT",
 	"require": {
