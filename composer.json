@@ -8,8 +8,8 @@
 	],
 	"type": "library",
 	"dist": {
-		"type": "vcs",
-		"url": "https://github.com/armor-payments/armor-payments-php"
+		"type": "git",
+		"url": "https://github.com/armor-payments/armor-payments-php.git"
 	},
 	"homepage": "http://www.armorpayments.com",
 	"license": "MIT",
